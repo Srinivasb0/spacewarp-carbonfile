@@ -15,7 +15,8 @@ print(socDB.dtypes == 'str')
 x = socDB.drop(['SampleID','SOC (%)'], 1)
 y = socDB['SOC (%)']
 
-
+# splitting data for training and testing
+X_train = socDB
 
 
 

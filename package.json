@@ -7,13 +7,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "node"
-  },
+  "repository": "node",
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^3.3.0"
+    "ethers": "^6.0.0",
+    "node-fetch": "^3.3.0",
+    "web3": "^1.8.2"
+  },
+  "devDependencies": {
+    "hardhat": "^2.12.6"
   }
 }

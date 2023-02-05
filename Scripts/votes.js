@@ -1,27 +1,28 @@
-
-import  Web3 from 'web3';
 import votes from "../abi/votes.json" assert {type: "json"};
 
+// New NFT
+const voteProject = document.getElementById('vote');
+voteProject.addEventListener('click', voteForProject);
+console.log("hello");
 
-if (typeof window.ethereum == "undefined") {
-    rej("You should install Metamask to use it!");
-}
+const voteAddress = "0xD5f2a720e0f337aac7CD710b8818aaecE53F8db7"
 
-// Web3 Instance 
-let web3 = new Web3(window.ethereum);
-let contract = new web3.eth.Contract(votes, "0xE40e4c3aE88675d70E876E57485A25A84f7E6017");
+const voteABI = [
+    "function name() view returns (string)",
+    "function symbol() view returns (string)",
+    // vote for project
+    "function voteForProject(bytes32 project)",
+    // token holders
+    "function totalVotesFor(bytes32 project) view returns(uint)",
+    // token count
+    "function projectList(uint) view returns(uint)"
+]
 
+const provider = new ethers.providers.Web3Provider(window.ethereum)
+provider.send("eth_requestAccounts", []);
+const signer = provider.getSigner()
 
-// total votes for project
-web3.eth.getAccounts().then((accounts) => {
-    contract.methods.totalVotesFor(project).send({ from: accounts[0] }).then((data) => {
-        console.log("");
-    });
-});
-
-// vote for project
-web3.eth.getAccounts().then((accounts) => {
-    contract.methods.voteForProject(project).send({ from: accounts[0] }).then((data) => {
-        console.log("");
-    });
-});
+// reading contract data
+const pContract = new ethers.Contract(voteAddress, voteABI, provider);
+// writing to contract data
+const sContract = new ethers.Contract(voteAddress, voteABI, signer);

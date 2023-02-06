@@ -13,3 +13,7 @@ Commands to run app
 - git clone https://github.com/Srinivasb0/spacewarp-carbonfile
 - npm install or npm install --legacy-peer-deps
 - npm start
+
+Public Access of project
+- https://bafybeibzt3cqbfff2i2rmxgububrfk6zmactfeagaqdtmz47nutbzoafey.ipfs.sphn.link/
+

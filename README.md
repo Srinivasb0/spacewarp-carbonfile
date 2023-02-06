@@ -10,6 +10,6 @@ For example
 
 
 Commands to run app
-git clone https://github.com/Srinivasb0/spacewarp-carbonfile
-npm install or npm install --legacy-peer-deps
-npm start
+- git clone https://github.com/Srinivasb0/spacewarp-carbonfile
+- npm install or npm install --legacy-peer-deps
+- npm start
